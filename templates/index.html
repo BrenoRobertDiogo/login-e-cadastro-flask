@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- PAGE settings -->
+    <link rel="icon" href="https://templates.pingendo.com/assets/Pingendo_favicon.ico">
+    <title>Checkout</title>
+    <meta name="description" content="Wireframe design of a checkout form by Pingendo">
+    <meta name="keywords" content="Pingendo bootstrap example template wireframe checkout form">
+    <meta name="author" content="Pingendo">
+    <!-- CSS dependencies -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+          type="text/css">
+    <link rel="stylesheet" href="/static/css/wireframe.css">
+</head>
+
+<body class="bg-light">
+<div class="py-5">
+    <div class="container">
+        <div class="row">
+            <div class="text-center col-md-7 mx-auto"><i class="fa d-block fa-bullseye fa-5x mb-4 text-info"></i>
+                <h2><b>Checkout form</b></h2>
+                <p class="lead">Below is an example form built entirely with Bootstrap's form controls. Each required
+                    form group has a validation state that can be triggered by attempting to submit the form without
+                    completing it.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 order-md-2">
+                <h4 class="d-flex justify-content-between mb-3"><span class="text-muted"><b>Your cart</b></span> <span
+                        class="badge badge-secondary badge-pill">3</span></h4>
+                <ul class="list-group">
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0"><b>Product name</b></h6> <small class="text-muted">Brief
+                            description</small>
+                        </div>
+                        <span class="text-muted">$12</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0"><b>Second product</b></h6> <small class="text-muted">Brief
+                            description</small>
+                        </div>
+                        <span class="text-muted">$8</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between">
+                        <div>
+                            <h6 class="my-0"><b>Third item</b></h6> <small class="text-muted">Brief description</small>
+                        </div>
+                        <span class="text-muted">$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between bg-light">
+                        <div class="text-success">
+                            <h6 class="my-0"><b>Promo code</b></h6> <small>EXAMPLECODE</small>
+                        </div>
+                        <span class="text-success">-$5</span>
+                    </li>
+                    <li class="list-group-item d-flex justify-content-between"><span>Total (USD)</span> <b>$20</b></li>
+                </ul>
+            </div>
+            <div class="col-md-8 order-md-1">
+                <h4 class="mb-3"><b>Cadastro de Produtos</b></h4>
+                <form class="needs-validation" novalidate="" style="" method="post" action="/estoque">
+                    <div class="row">
+                        <div class="col-md-6 mb-3"><label for="codItem">Cod Item</label>
+                            <input type="text" class="form-control" id="codItem" name="codItem" placeholder="" value=""
+                                   required="">
+                            <div class="invalid-feedback"> Valid first name is required.</div>
+                        </div>
+                        <div class="col-md-6 mb-3"><label for="desc">Descrição</label>
+                            <input type="text" class="form-control" id="desc" name="desc" placeholder="" value=""
+                                   required="">
+                            <div class="invalid-feedback"> Valid last name is required.</div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12 mb-3"><label for="country">Unidade de Medida</label> <select
+                            class="custom-select d-block w-100" id="medida" name="medida" required>
+                        <option value="">Escolha Uma Medida</option>
+                        <option value="kg">Kilogramas</option>
+                        <option value="un">Unitário</option>
+                        <option value="lt">Litros</option>
+                    </select>
+                    </div>
+
+                    <div class="col-md-12 mb-3"><label for="categoria">Categoria do Produto</label> <select
+                            class="custom-select d-block w-100" id="categoria" name="categoria" required>
+                        <option value="">Escolha uma Categoria</option>
+                        <option value="limp">Limpeza</option>
+                        <option value="vest">Vestuário</option>
+                        <option value="frig">Frigorífico</option>
+                        <option value="beb">Bebidas</option>
+                    </select>
+                    </div>
+
+                    <div class="mb-3"><label for="fabricante">Fabricante</label>
+                        <input type="text" class="form-control" id="fabricante" name="fabricante" placeholder=""
+                               required>
+                        <div class="invalid-feedback"> Please enter your shipping address.</div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <div class="col-md-12 mb-3"><label for="quantidade">Quantidade</label>
+                                        <input type="text" class="form-control" id="quantidade" name="quantidade"
+                                               placeholder="" value="" required="">
+                                        <div class="invalid-feedback"> Valid last name is required.</div>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="col-md-12 mb-3"><label for="precunit">Preço Unitário</label>
+                                        <input type="text" class="form-control" id="precunit" name="precunit"
+                                               placeholder="" value="" required="">
+                                        <div class="invalid-feedback"> Valid last name is required.</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <hr class="mb-4">
+                    <hr class="mb-4">
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Cadastrar</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="py-5 text-muted text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 my-4">
+                <p class="mb-1">© 2017-2018 Company Name</p>
+                <ul class="list-inline">
+                    <li class="list-inline-item">
+                        <a href="#">Privacy</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">Terms</a>
+                    </li>
+                    <li class="list-inline-item">
+                        <a href="#">Support</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+<!-- <script src="assets/js/validation.js"></script> -->
+<pingendo onclick="window.open('https://pingendo.com/', '_blank')"
+          style="cursor:pointer;position: fixed;bottom: 20px;right:20px;padding:4px;background-color: #00b0eb;border-radius: 8px; width:220px;display:flex;flex-direction:row;align-items:center;justify-content:center;font-size:14px;color:white">
+    Made with Pingendo Free&nbsp;&nbsp;<img src="https://pingendo.com/site-assets/Pingendo_logo_big.png" class="d-block"
+                                            alt="Pingendo logo" height="16"></pingendo>
+</body>
+
+</html>

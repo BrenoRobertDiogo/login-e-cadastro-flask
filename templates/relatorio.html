@@ -1,0 +1,78 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<!------ Include the above in your HEAD tag ---------->
+
+    		<nav class="navbar navbar-default navbar-static-top">
+				<div class="container-fluid">
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+							<span class="sr-only">Toggle navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<a class="navbar-brand" href="#">
+							ADMIN
+						</a>
+					</div>
+					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+						<ul class="nav navbar-nav navbar-right">
+							<li><a href="http://www.sciax2.it/forum/utenti/-kik_226760/" target="_blank">Return back</a></li>
+							<li class="dropdown ">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">
+									Settings
+									<span class="caret"></span></a>
+									<ul class="dropdown-menu" role="menu">
+										<li class="dropdown-header">SETTINGS</li>
+										<li class=""><a href="#">Link</a></li>
+										<li class=""><a href="#">Other Link</a></li>
+										<li class=""><a href="#">Other Link</a></li>
+										<li class="divider"></li>
+										<li><a href="#">Logout</a></li>
+									</ul>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</nav>
+				<div class="container-fluid">
+					<div class="col col-md-3">
+						<div class="panel-group" id="accordion">
+						  <div class="panel panel-default">
+							<div class="panel-heading">
+							  <h4 class="panel-title">
+								<a data-toggle="collapse" data-parent="#accordion" href="#collapse1">
+								Total de Produtos Por Categoria</a>
+							  </h4>
+							</div>
+							<div id="collapse1" class="panel-collapse collapse in">
+								<ul class="list-group">
+                                    {% for cat, qtd in diciProdEstoque.items()  %}
+									    <li class="list-group-item"><span class="badge">{{ qtd[1] }}/{{ qtd[0] }}</span> {{ cat }}</li>
+                                    {% endfor %}
+								</ul>
+							</div>
+						  </div>
+						</div>
+					</div>
+					<div class="col col-md-9">
+						<div class="row">
+							<div class="col col-md-5">
+								<h4>Capacidade Ocupada do Estoque Por Categoria:</h4>
+                                {% for cat, qtd in diciProdEstoque.items()  %}
+										{{ cat }}<span class="pull-right strong"></span>
+										 <div class="progress">
+                                                {% if  (qtd[1]/qtd[0])*100 >= 100 or  (qtd[1]/qtd[0])*100 < 20 %}
+											    <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width:{{ (qtd[1]/qtd[0])*100 }}%">
+                                                    {{ (qtd[1]/qtd[0])*100 }}%</div>
+                                                {% else %}
+ 											    <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="" aria-valuemin="0" aria-valuemax="100" style="width:{{ (qtd[1]/qtd[0])*100 }}%">
+                                                    {{ (qtd[1]/qtd[0])*100 }}%</div>
+                                                {% endif %}
+										</div>
+                                {% endfor %}
+							</div>
+						</div>
+					</div>
+				</div>
